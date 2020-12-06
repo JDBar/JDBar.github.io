@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>JDBar.github.io</title>
+		<link rel="stylesheet" href="./styles.css" />
+		<script type="text/javascript" src=./index.js></script>
+	</head>
+	<body>
+		<h1>Sierpinski Carpet in JavaScript</h1>
+    <h2>by Joseph Barron</h2>
+    <div class="carpet-wrapper">
+      <div class="info">
+        <h2>Slow and Steady</h2>
+        <p>
+          My first attempt. Simply draws all the rectangles, even in unnecessary areas. Accurate until rectangles are below 0.1 pixels, then drawing is skipped.
+        </p>
+        <p>
+          The quality is quite good, but cannot reach level 10 at a high resolution.
+        </p>
+        <button id="slow-button">Play</button>
+      </div>
+      <canvas id="slow"></canvas>
+    </div>
+    
+    <div class="carpet-wrapper">
+      <div class="info">
+        <h2>Quick and Dirty</h2>
+        <p>
+          A faster second attempt that can easily reach level 10 at high resolutions. Instead of drawing each rectangle, it draws one at each level, and copies the top-left pixels and pastes them into the correct places.
+        </p>
+        <p>
+          Less accurate than the slow solution, since subpixel accuracy is impossible.
+        </p>
+        <button id="fast-button">Play</button>
+      </div>
+      <canvas id="fast"></canvas>
+    </div>
+    
+    <div class="carpet-wrapper">
+      <div class="info">
+        <h2>The Best</h2>
+        <p>
+          My third attempt which is the most accurate, and still really fast. This solution renders one level, then copies the entire pixel area to render the next level.
+        </p>
+        <p>
+          This will render all squares at an infinitely small accuracy. Unfortunately, in reality, this leads to really horrible artifacts without a smoothing step. By default, this smoothing is enabled.
+        </p>
+        <button id="best-button">Play</button>
+      </div>
+      <canvas id="best"></canvas>
+    </div>
+	</body>
+</html>
